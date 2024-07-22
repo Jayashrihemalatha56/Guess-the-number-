@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Game</title>
+</head>
+<body>
+<h1>Guess the Number from 1 to 10</h1>
+<input id="checknumber">
+<button onclick="check()">Check</button>
+<p id="result">Your are Wrong/Right!</p>
+<p id="score">Score:10</p>
+<script>
+    var checknumber=document.getElementById("checknumber")
+    var result=document.getElementById("result")
+    var randomNumber=Math.floor(Math.random()*10)+1
+    var score=document.getElementById("score")
+    var totalscore=10
+    function check()
+    {
+        var enterednumber=checknumber.value
+        if(randomNumber==enterednumber)
+        {
+            console.log("You are Right!")
+            result.textContent="You are Right!"
+            alert("YOU WON...")
+        }
+        else
+        {
+            totalscore=totalscore-1
+            score.textContent="Score:"+totalscore
+            console.log("You are Wrong!")
+            result.textContent="You are Wrong!"
+        }
+    }
+</script>
+</body>
+</html>
